@@ -16,10 +16,8 @@ public class EmployeeCollection {
         list.add(new Employee("Minh", "Scott"));
         list.add(new Employee("Sery", "Minh"));
         list.add(new Employee("Lubna", "Sery"));
-        list.add(new Employee("Slava", "Lubna"));
-        list.add(new Employee("Slava", "Lubna"));
-
-        list.add(new Employee("Vanya", "Slava"));
+        list.add(new Employee("Sam", "Lubna"));
+        list.add(new Employee("Vanya", "Sam"));
         list.add(new Employee("Igor", "Vanya"));
         list.add(new Employee("Oleg", "Igor"));
         list.add(new Employee("Mudila", "Oleg"));
