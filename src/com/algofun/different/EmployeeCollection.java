@@ -26,17 +26,23 @@ public class EmployeeCollection {
 
 
         EmployeeCollection collection = new EmployeeCollection();
-        Set<String> set = collection.findSubOrdinates("Igor", list);
 
+        Set<String> set = collection.findSubOrdinates("Igor", list);
+        System.out.println(Arrays.toString(set.toArray()));
+
+        set = collection.findSubOrdinates("Scott", list);
         System.out.println(Arrays.toString(set.toArray()));
     }
 
     Map<String, String> empMap;
     Map<String, Set<String>> empToBosses;
 
-    int N = 0;
+    boolean isInit;
+
+    int N;
 
     public Set<String> findSubOrdinates(String name, Collection<Employee> list){
+        N = 0;
         fillMaps(list);
         Set<String> ordinates = new HashSet<String>();
         ordinates.add(name);
@@ -51,6 +57,8 @@ public class EmployeeCollection {
     }
 
     public void fillMaps(Collection<Employee> employees){
+        if(isInit) return;
+
         empMap = new HashMap<String, String>();
         for(Employee e : employees){
             empMap.put(e.name, e.reportTo);
@@ -63,6 +71,7 @@ public class EmployeeCollection {
             N++;
         }
 
+        isInit = true;
     }
 
     public Set<String> getBossSet(String name){
